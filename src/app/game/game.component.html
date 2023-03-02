@@ -1,0 +1,27 @@
+<h1>Choose rock paper scissors</h1>
+<div>
+  <h2>Round: {{ whichRound }}</h2>
+  <button (click)="reset()">Reset Scores</button>
+</div>
+<div class="choices">
+  <button (click)="checkResult(0)">ROCK</button>
+  <button (click)="checkResult(1)">PAPER</button>
+  <button (click)="checkResult(2)">SCISSORS</button>
+</div>
+
+<!--            -1 lose, 0 tie 1 win   -->
+<div>
+  <h3>Compouter selected</h3>
+  <div>{{ transformToStr(computerChoice) }}</div>
+</div>
+<br /><br />
+<div>
+  <h3 *ngIf="result == -1">You Lose</h3>
+  <h3 *ngIf="result == 0">Tie</h3>
+  <h3 *ngIf="result == 1">You win</h3>
+</div>
+
+<div>
+  <h2>Player Score: {{ playerScore }}</h2>
+  <h2>Computer Score: {{ computerScore }}</h2>
+</div>
