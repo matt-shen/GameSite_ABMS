@@ -1,27 +1,52 @@
-<h1>Choose rock paper scissors</h1>
-<div>
-  <h2>Round: {{ whichRound }}</h2>
-  <button (click)="reset()">Reset Scores</button>
-</div>
-<div class="choices">
-  <button (click)="checkResult(0)">ROCK</button>
-  <button (click)="checkResult(1)">PAPER</button>
-  <button (click)="checkResult(2)">SCISSORS</button>
-</div>
-
-<!--            -1 lose, 0 tie 1 win   -->
-<div>
-  <h3>Compouter selected</h3>
-  <div>{{ transformToStr(computerChoice) }}</div>
-</div>
-<br /><br />
-<div>
-  <h3 *ngIf="result == -1">You Lose</h3>
-  <h3 *ngIf="result == 0">Tie</h3>
-  <h3 *ngIf="result == 1">You win</h3>
-</div>
+<h2>Choose rock paper scissors</h2>
 
 <div>
-  <h2>Player Score: {{ playerScore }}</h2>
-  <h2>Computer Score: {{ computerScore }}</h2>
+  <div
+    class="choices"
+    style="display: flex; justify-content: center; text-align: center"
+  >
+    <div>
+      <button (click)="checkResult(0)">
+        <img width="100px" src="../../assets/rock2.jfif" />ROCK
+      </button>
+    </div>
+    <div>
+      <button (click)="checkResult(1)">
+        <img width="100px" src="../../assets/paper.jfif" />PAPER
+      </button>
+    </div>
+    <div>
+      <button (click)="checkResult(2)">
+        <img width="100px" src="../../assets/robot hand.jpg" />SCISSORS
+      </button>
+    </div>
+  </div>
+  <div>
+    <div>
+      <h3 style="text-align: left">
+        Player selected <span style="float: right"> Compouter selected </span>
+      </h3>
+    </div>
+    <h3 style="text-align: left">
+      {{ transformToStr(playerChoice) }}
+      <span style="float: right"> {{ transformToStr(computerChoice) }}</span>
+    </h3>
+  </div>
+
+  <!--            -1 lose, 0 tie 1 win   -->
+
+  <div style="text-align: center">
+    <h3 *ngIf="result == -1">You Lose</h3>
+    <h3 *ngIf="result == 0">Tie</h3>
+    <h3 *ngIf="result == 1">You win</h3>
+  </div>
+
+  <div style="text-align: center">
+    <h2>Player Score: {{ playerScore }}</h2>
+    <h2>Computer Score: {{ computerScore }}</h2>
+  </div>
+  <div style="text-align: center">
+    <h2>Round: {{ whichRound }}</h2>
+    <button (click)="reset()">Reset Scores</button>
+  </div>
 </div>

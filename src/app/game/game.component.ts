@@ -45,6 +45,7 @@ export class GameComponent {
 
   //-1 player loses , 0 tie, 1 player wins
   public checkResult(playerChoice: number) {
+    this.playerChoice = playerChoice;
     this.computerChoice = this.computerTurn();
     this.whichRound++;
     if (playerChoice == this.computerChoice) {
